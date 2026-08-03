@@ -10,7 +10,7 @@
 
     <meta
         name="description"
-        content="Undangan PA Naposo Bulung HKBP Dame"
+        content="Undangan PA Naposo Bulung HKBP Dame, Sabtu 08 Agustus 2026."
     >
 
     <title>PA Naposo Bulung HKBP Dame</title>
@@ -20,7 +20,6 @@
             --navy-dark: #020914;
             --navy: #071a32;
             --navy-light: #123c6a;
-            --blue: #3182ce;
             --sky: #b8dfff;
             --gold: #e7c36b;
             --cream: #fff6dc;
@@ -47,7 +46,7 @@
 
             background:
                 radial-gradient(
-                    circle at 50% 12%,
+                    circle at 50% 10%,
                     rgba(47, 128, 210, 0.42),
                     transparent 31%
                 ),
@@ -71,7 +70,7 @@
             inset: 0;
             z-index: -2;
 
-            opacity: 0.30;
+            opacity: 0.3;
             pointer-events: none;
 
             background-image:
@@ -110,19 +109,16 @@
             padding: 20px 16px 40px;
         }
 
-        /*
-        ==========================================
-        COVER
-        ==========================================
-        */
+        /* COVER */
 
         .hero {
-            min-height: 96vh;
+            min-height: 100vh;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
+            padding: 35px 0 50px;
             text-align: center;
         }
 
@@ -131,66 +127,43 @@
             animation: reveal 1.1s ease both;
         }
 
-        /*
-        ==========================================
-        LOGO KIRI, JUDUL TENGAH, LOGO KANAN
-        ==========================================
-        */
+        /* LOGO DI ATAS */
 
-        .hero-heading {
-            display: grid;
-
-            grid-template-columns:
-                clamp(100px, 16vw, 145px)
-                minmax(0, 1fr)
-                clamp(100px, 16vw, 145px);
-
+        .top-logos {
+            display: flex;
             align-items: center;
+            justify-content: center;
 
-            gap: clamp(15px, 3vw, 32px);
+            gap: clamp(24px, 6vw, 48px);
 
-            width: 100%;
-            margin: auto;
+            margin-bottom: 30px;
         }
 
-        .heading-content {
-            min-width: 0;
-            text-align: center;
-        }
-
-        .side-logo {
-            width: 100%;
-            aspect-ratio: 1 / 1;
+        .top-logo {
+            width: clamp(115px, 20vw, 155px);
+            height: clamp(115px, 20vw, 155px);
 
             padding: 7px;
-
             overflow: hidden;
 
-            border:
-                2px solid
-                rgba(231, 195, 107, 0.82);
-
+            border: 2px solid rgba(231, 195, 107, 0.85);
             border-radius: 50%;
 
             background: #ffffff;
 
             box-shadow:
                 0 0 0 5px rgba(255, 255, 255, 0.05),
-                0 14px 36px rgba(0, 0, 0, 0.35),
-                0 0 30px rgba(66, 148, 240, 0.28);
+                0 14px 38px rgba(0, 0, 0, 0.35),
+                0 0 32px rgba(67, 149, 240, 0.28);
 
-            animation:
-                logoFloat
-                3s
-                ease-in-out
-                infinite;
+            animation: logoFloat 3s ease-in-out infinite;
         }
 
-        .side-logo:last-child {
+        .top-logo:nth-child(2) {
             animation-delay: 0.4s;
         }
 
-        .side-logo img {
+        .top-logo img {
             display: block;
 
             width: 100%;
@@ -207,54 +180,51 @@
             align-items: center;
             justify-content: center;
 
-            max-width: 100%;
+            max-width: 94%;
 
-            padding: 9px 16px;
-            margin-bottom: 18px;
+            padding: 9px 17px;
+            margin-bottom: 21px;
 
-            border:
-                1px solid
-                rgba(231, 195, 107, 0.48);
-
+            border: 1px solid rgba(231, 195, 107, 0.5);
             border-radius: 999px;
 
             color: var(--gold);
+            background: rgba(231, 195, 107, 0.08);
 
-            background:
-                rgba(231, 195, 107, 0.08);
-
-            font-size: clamp(8px, 1.3vw, 11px);
+            font-size: clamp(8px, 1.6vw, 11px);
             font-weight: 700;
 
-            letter-spacing: clamp(1px, 0.25vw, 2.3px);
+            letter-spacing: clamp(1.2px, 0.35vw, 2.5px);
             text-transform: uppercase;
-
-            white-space: nowrap;
         }
 
         .eyebrow {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
 
             color: var(--sky);
 
-            font-size: clamp(11px, 2vw, 15px);
+            font-size: clamp(12px, 2vw, 16px);
             font-weight: 700;
 
-            letter-spacing: clamp(2px, 0.5vw, 4px);
+            letter-spacing: clamp(3px, 0.6vw, 5px);
             text-transform: uppercase;
         }
 
         h1 {
-            max-width: 560px;
+            width: 100%;
+            max-width: 760px;
+
             margin: auto;
+            padding: 0 8px;
 
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
-            font-size: clamp(32px, 6vw, 65px);
-            line-height: 1.02;
+            font-size: clamp(50px, 8vw, 82px);
+            line-height: 0.98;
+            letter-spacing: -1px;
 
             background:
                 linear-gradient(
@@ -277,31 +247,25 @@
         }
 
         .subtitle-title {
-            margin-top: 10px;
+            margin-top: 17px;
 
-            color:
-                rgba(255, 255, 255, 0.82);
+            color: rgba(255, 255, 255, 0.84);
 
-            font-size: clamp(13px, 2vw, 18px);
+            font-size: clamp(15px, 2.3vw, 20px);
             font-weight: 700;
 
-            letter-spacing: clamp(2px, 0.4vw, 4px);
+            letter-spacing: clamp(3px, 0.6vw, 5px);
             text-transform: uppercase;
         }
 
         .date-badge {
             width: fit-content;
 
-            margin: 30px auto 0;
-            padding: 13px 22px;
+            margin: 36px auto 0;
+            padding: 15px 24px;
 
-            border-top:
-                1px solid
-                rgba(255, 255, 255, 0.2);
-
-            border-bottom:
-                1px solid
-                rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 
             color: var(--cream);
 
@@ -310,16 +274,16 @@
                 "Times New Roman",
                 serif;
 
-            font-size: clamp(18px, 3vw, 25px);
+            font-size: clamp(20px, 3.5vw, 28px);
+            line-height: 1.35;
         }
 
         .scroll-text {
             display: inline-block;
 
-            margin-top: 30px;
+            margin-top: 38px;
 
-            color:
-                rgba(255, 255, 255, 0.52);
+            color: rgba(255, 255, 255, 0.53);
 
             font-size: 10px;
             font-weight: 700;
@@ -327,27 +291,16 @@
             letter-spacing: 2px;
             text-transform: uppercase;
 
-            animation:
-                float
-                2s
-                ease-in-out
-                infinite;
+            animation: float 2s ease-in-out infinite;
         }
 
-        /*
-        ==========================================
-        SECTION
-        ==========================================
-        */
+        /* SECTION */
 
         .section {
             margin-top: 25px;
             padding: 28px 22px;
 
-            border:
-                1px solid
-                var(--line);
-
+            border: 1px solid var(--line);
             border-radius: 25px;
 
             background:
@@ -390,15 +343,11 @@
                 "Times New Roman",
                 serif;
 
-            font-size: clamp(25px, 5vw, 36px);
+            font-size: clamp(27px, 5vw, 38px);
             font-weight: 600;
         }
 
-        /*
-        ==========================================
-        DETAIL ACARA
-        ==========================================
-        */
+        /* DETAIL ACARA */
 
         .detail-grid {
             display: grid;
@@ -410,17 +359,13 @@
         }
 
         .detail-card {
-            min-height: 130px;
+            min-height: 132px;
             padding: 19px 16px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.11);
-
+            border: 1px solid rgba(255, 255, 255, 0.11);
             border-radius: 18px;
 
-            background:
-                rgba(255, 255, 255, 0.055);
+            background: rgba(255, 255, 255, 0.055);
         }
 
         .icon {
@@ -436,9 +381,7 @@
             border-radius: 12px;
 
             color: var(--gold);
-
-            background:
-                rgba(231, 195, 107, 0.12);
+            background: rgba(231, 195, 107, 0.12);
 
             font-size: 19px;
         }
@@ -454,25 +397,19 @@
         }
 
         .detail-card p {
-            color:
-                rgba(255, 255, 255, 0.93);
+            color: rgba(255, 255, 255, 0.93);
 
             font-size: 15px;
             line-height: 1.55;
         }
 
-        /*
-        ==========================================
-        TEMA
-        ==========================================
-        */
+        /* TEMA */
 
         .theme-card {
             position: relative;
             overflow: hidden;
 
-            padding: 36px 24px;
-
+            padding: 38px 24px;
             text-align: center;
         }
 
@@ -483,8 +420,7 @@
             top: -28px;
             left: 14px;
 
-            color:
-                rgba(231, 195, 107, 0.12);
+            color: rgba(231, 195, 107, 0.12);
 
             font-family: Georgia, serif;
             font-size: 155px;
@@ -513,29 +449,24 @@
                 "Times New Roman",
                 serif;
 
-            font-size: clamp(27px, 6vw, 44px);
+            font-size: clamp(29px, 6vw, 46px);
             font-weight: 600;
             line-height: 1.18;
         }
 
         .sub-theme {
-            max-width: 550px;
+            max-width: 560px;
 
-            margin: 16px auto 0;
+            margin: 17px auto 0;
 
-            color:
-                rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.75);
 
             font-size: 15px;
             font-style: italic;
             line-height: 1.7;
         }
 
-        /*
-        ==========================================
-        AYAT
-        ==========================================
-        */
+        /* AYAT */
 
         .verse-card {
             text-align: center;
@@ -558,9 +489,7 @@
             border-radius: 999px;
 
             color: var(--gold);
-
-            background:
-                rgba(231, 195, 107, 0.1);
+            background: rgba(231, 195, 107, 0.1);
 
             font-size: 11px;
             font-weight: 700;
@@ -573,23 +502,18 @@
             max-width: 620px;
             margin: auto;
 
-            color:
-                rgba(255, 255, 255, 0.93);
+            color: rgba(255, 255, 255, 0.93);
 
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
-            font-size: clamp(19px, 4vw, 27px);
+            font-size: clamp(20px, 4vw, 28px);
             line-height: 1.55;
         }
 
-        /*
-        ==========================================
-        COUNTDOWN
-        ==========================================
-        */
+        /* COUNTDOWN */
 
         .countdown {
             display: grid;
@@ -604,14 +528,10 @@
         .count-item {
             padding: 17px 7px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.11);
-
+            border: 1px solid rgba(255, 255, 255, 0.11);
             border-radius: 16px;
 
-            background:
-                rgba(255, 255, 255, 0.045);
+            background: rgba(255, 255, 255, 0.045);
 
             text-align: center;
         }
@@ -632,8 +552,7 @@
 
             margin-top: 4px;
 
-            color:
-                rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.5);
 
             font-size: 8px;
             font-weight: 700;
@@ -642,11 +561,7 @@
             text-transform: uppercase;
         }
 
-        /*
-        ==========================================
-        TOMBOL
-        ==========================================
-        */
+        /* TOMBOL */
 
         .button-group {
             display: grid;
@@ -668,16 +583,11 @@
             min-height: 53px;
             padding: 13px 15px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.14);
-
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 15px;
 
             color: var(--white);
-
-            background:
-                rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.07);
 
             font-size: 12px;
             font-weight: 700;
@@ -692,14 +602,11 @@
 
         .button:hover {
             transform: translateY(-2px);
-
-            background:
-                rgba(255, 255, 255, 0.13);
+            background: rgba(255, 255, 255, 0.13);
         }
 
         .button.primary {
             color: #091522;
-
             border-color: transparent;
 
             background:
@@ -710,11 +617,7 @@
                 );
         }
 
-        /*
-        ==========================================
-        FOOTER
-        ==========================================
-        */
+        /* FOOTER */
 
         footer {
             padding: 40px 10px 6px;
@@ -729,8 +632,7 @@
         footer p {
             margin-top: 9px;
 
-            color:
-                rgba(255, 255, 255, 0.52);
+            color: rgba(255, 255, 255, 0.52);
 
             font-family: Georgia, serif;
 
@@ -741,8 +643,7 @@
         .closing {
             margin-top: 9px;
 
-            color:
-                rgba(255, 255, 255, 0.32);
+            color: rgba(255, 255, 255, 0.32);
 
             font-size: 9px;
             font-weight: 700;
@@ -751,11 +652,7 @@
             text-transform: uppercase;
         }
 
-        /*
-        ==========================================
-        ANIMASI
-        ==========================================
-        */
+        /* ANIMASI */
 
         @keyframes reveal {
             from {
@@ -807,107 +704,80 @@
             }
         }
 
-        /*
-        ==========================================
-        RESPONSIVE TABLET
-        ==========================================
-        */
+        /* TABLET */
 
         @media (max-width: 750px) {
-            .hero-heading {
-                grid-template-columns:
-                    85px
-                    minmax(0, 1fr)
-                    85px;
+            h1 {
+                font-size: clamp(48px, 10vw, 70px);
+            }
+        }
 
-                gap: 11px;
+        /* HP */
+
+        @media (max-width: 520px) {
+            .page {
+                padding: 12px 13px 28px;
             }
 
-            .side-logo {
+            .hero {
+                min-height: 100vh;
+                padding: 30px 0 45px;
+            }
+
+            .top-logos {
+                gap: 24px;
+                margin-bottom: 27px;
+            }
+
+            .top-logo {
+                width: 112px;
+                height: 112px;
+
                 padding: 5px;
             }
 
             .church-label {
-                padding: 7px 11px;
-                margin-bottom: 14px;
+                margin-bottom: 19px;
+                padding: 8px 13px;
 
                 font-size: 8px;
                 letter-spacing: 1.3px;
             }
 
-            h1 {
-                font-size: clamp(28px, 7vw, 46px);
-            }
-        }
-
-        /*
-        ==========================================
-        RESPONSIVE HP
-        ==========================================
-        */
-
-        @media (max-width: 520px) {
-            .page {
-                padding: 14px 12px 28px;
-            }
-
-            .hero {
-                min-height: 94vh;
-            }
-
-            .hero-heading {
-                grid-template-columns:
-                    65px
-                    minmax(0, 1fr)
-                    65px;
-
-                gap: 7px;
-            }
-
-            .side-logo {
-                padding: 3px;
-
-                border-width: 1.5px;
-
-                box-shadow:
-                    0 0 0 3px rgba(255, 255, 255, 0.05),
-                    0 8px 22px rgba(0, 0, 0, 0.3),
-                    0 0 18px rgba(66, 148, 240, 0.24);
-            }
-
-            .church-label {
-                max-width: 100%;
-
-                padding: 6px 7px;
-                margin-bottom: 13px;
-
-                font-size: 6.5px;
-                letter-spacing: 0.7px;
-            }
-
             .eyebrow {
-                margin-bottom: 6px;
+                margin-bottom: 10px;
 
-                font-size: 10px;
-                letter-spacing: 2px;
+                font-size: 13px;
+                letter-spacing: 4px;
             }
 
             h1 {
-                font-size: clamp(24px, 7.2vw, 36px);
-                line-height: 1.05;
+                max-width: 390px;
+
+                font-size: clamp(49px, 13vw, 64px);
+                line-height: 0.98;
+                letter-spacing: -1px;
             }
 
             .subtitle-title {
-                margin-top: 7px;
+                margin-top: 16px;
 
-                font-size: 11px;
-                letter-spacing: 2px;
+                font-size: 16px;
+                letter-spacing: 4px;
             }
 
             .date-badge {
-                margin-top: 27px;
+                margin-top: 36px;
+                padding: 15px 14px;
 
-                font-size: 18px;
+                font-size: 21px;
+            }
+
+            .scroll-text {
+                margin-top: 37px;
+
+                font-size: 9px;
+                letter-spacing: 2px;
             }
 
             .detail-grid {
@@ -919,34 +789,50 @@
             }
 
             .section {
-                padding: 23px 16px;
+                padding: 24px 16px;
                 border-radius: 21px;
+            }
+
+            .countdown {
+                gap: 6px;
+            }
+
+            .count-item {
+                padding: 14px 4px;
+            }
+
+            .count-number {
+                font-size: 27px;
             }
         }
 
-        /*
-        ==========================================
-        HP SANGAT KECIL
-        ==========================================
-        */
+        /* HP KECIL */
 
-        @media (max-width: 370px) {
-            .hero-heading {
-                grid-template-columns:
-                    55px
-                    minmax(0, 1fr)
-                    55px;
+        @media (max-width: 380px) {
+            .top-logos {
+                gap: 18px;
+            }
 
-                gap: 5px;
+            .top-logo {
+                width: 94px;
+                height: 94px;
             }
 
             .church-label {
-                font-size: 5.8px;
-                letter-spacing: 0.4px;
+                font-size: 7px;
+                padding: 7px 10px;
             }
 
             h1 {
-                font-size: 23px;
+                font-size: 45px;
+            }
+
+            .subtitle-title {
+                font-size: 14px;
+            }
+
+            .date-badge {
+                font-size: 18px;
             }
         }
     </style>
@@ -961,39 +847,16 @@
 
             <div class="hero-content">
 
-                <div class="hero-heading">
+                <div class="top-logos">
 
-                    <!-- LOGO HKBP KIRI -->
-                    <div class="side-logo">
+                    <div class="top-logo">
                         <img
                             src="logo-hkbp.jpg"
                             alt="Logo HKBP"
                         >
                     </div>
 
-                    <!-- JUDUL TENGAH -->
-                    <div class="heading-content">
-
-                        <div class="church-label">
-                            ✦ Persekutuan Naposo Bulung ✦
-                        </div>
-
-                        <p class="eyebrow">
-                            Undangan
-                        </p>
-
-                        <h1>
-                            PA Naposo Bulung
-                        </h1>
-
-                        <p class="subtitle-title">
-                            HKBP Dame
-                        </p>
-
-                    </div>
-
-                    <!-- LOGO NAPOSO KANAN -->
-                    <div class="side-logo">
+                    <div class="top-logo">
                         <img
                             src="logo-naposo.jpg"
                             alt="Logo Naposo Bulung HKBP Dame"
@@ -1001,6 +864,22 @@
                     </div>
 
                 </div>
+
+                <div class="church-label">
+                    ✦ Persekutuan Naposo Bulung ✦
+                </div>
+
+                <p class="eyebrow">
+                    Undangan
+                </p>
+
+                <h1>
+                    PA Naposo Bulung
+                </h1>
+
+                <p class="subtitle-title">
+                    HKBP Dame
+                </p>
 
                 <div class="date-badge">
                     Sabtu, 08 Agustus 2026
@@ -1159,9 +1038,8 @@
 
             <p class="verse-text">
                 “Apa pun juga yang kamu perbuat,
-                perbuatlah dengan segenap hatimu
-                seperti untuk Tuhan dan bukan
-                untuk manusia.”
+                perbuatlah dengan segenap hatimu seperti
+                untuk Tuhan dan bukan untuk manusia.”
             </p>
 
         </section>
@@ -1289,12 +1167,6 @@
     </main>
 
     <script>
-        /*
-        Waktu acara:
-        Sabtu, 08 Agustus 2026
-        Pukul 20.00 WIB
-        */
-
         const eventDate =
             new Date(
                 "2026-08-08T20:00:00+07:00"
