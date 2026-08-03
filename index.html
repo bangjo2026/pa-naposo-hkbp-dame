@@ -853,7 +853,7 @@
 
                     <div class="top-logo">
                         <img
-                                                    src="logo-hkbp.jpg"
+                            src="logo-hkbp.jpg"
                             alt="Logo HKBP"
 
                         >
@@ -1113,310 +1113,244 @@
 
     </main>
 
-    <script>
-        /*
-        ===============================================
-        HITUNG MUNDUR
-        ===============================================
-        */
+   <script>
+    /*
+    =================================================
+    HITUNG MUNDUR
+    =================================================
+    */
 
-        const eventDate =
-            new Date(
-                "2026-08-08T20:00:00+07:00"
-            ).getTime();
+    const eventDate = new Date(
+        "2026-08-08T20:00:00+07:00"
+    ).getTime();
 
-        function updateCountdown() {
-            const distance =
-                eventDate - Date.now();
+    function updateCountdown() {
+        const now = Date.now();
+        const distance = eventDate - now;
 
-            let days = 0;
-            let hours = 0;
-            let minutes = 0;
-            let seconds = 0;
+        const daysElement =
+            document.getElementById("days");
 
-            if (distance > 0) {
-                days =
-                    Math.floor(
-                        distance /
-                        (
-                            1000 *
-                            60 *
-                            60 *
-                            24
-                        )
-                    );
+        const hoursElement =
+            document.getElementById("hours");
 
-                hours =
-                    Math.floor(
-                        (
-                            distance %
-                            (
-                                1000 *
-                                60 *
-                                60 *
-                                24
-                            )
-                        )
-                        /
-                        (
-                            1000 *
-                            60 *
-                            60
-                        )
-                    );
+        const minutesElement =
+            document.getElementById("minutes");
 
-                minutes =
-                    Math.floor(
-                        (
-                            distance %
-                            (
-                                1000 *
-                                60 *
-                                60
-                            )
-                        )
-                        /
-                        (
-                            1000 *
-                            60
-                        )
-                    );
+        const secondsElement =
+            document.getElementById("seconds");
 
-                seconds =
-                    Math.floor(
-                        (
-                            distance %
-                            (
-                                1000 *
-                                60
-                            )
-                        )
-                        /
-                        1000
-                    );
-            }
-
-            document
-                .getElementById("days")
-                .textContent =
-                    String(days)
-                    .padStart(2, "0");
-
-            document
-                .getElementById("hours")
-                .textContent =
-                    String(hours)
-                    .padStart(2, "0");
-
-            document
-                .getElementById("minutes")
-                .textContent =
-                    String(minutes)
-                    .padStart(2, "0");
-
-            document
-                .getElementById("seconds")
-                .textContent =
-                    String(seconds)
-                    .padStart(2, "0");
-        }
-
-        /*
-        ===============================================
-        MUSIK TANPA TOMBOL
-        ===============================================
-        */
-
-        const backgroundMusic =
-    document.getElementById("backgroundMusic");
-
-backgroundMusic.volume = 1;
-
-let musicStarted = false;
-
-async function startMusicOnce() {
-    if (musicStarted) return;
-
-    try {
-        backgroundMusic.muted = false;
-        backgroundMusic.currentTime = 0;
-
-        await backgroundMusic.play();
-
-        musicStarted = true;
-
-        document.removeEventListener(
-            "touchstart",
-            startMusicOnce
-        );
-
-        document.removeEventListener(
-            "pointerdown",
-            startMusicOnce
-        );
-
-        document.removeEventListener(
-            "click",
-            startMusicOnce
-        );
-    } catch (error) {
-        console.error(
-            "Musik gagal diputar:",
-            error
-        );
-    }
-}
-
-/* Coba saat halaman terbuka */
-window.addEventListener("load", async function () {
-    try {
-        await backgroundMusic.play();
-        musicStarted = true;
-    } catch (error) {
-        console.log(
-            "Autoplay diblokir. Menunggu sentuhan pengguna."
-        );
-    }
-});
-
-/* Musik mulai saat sentuhan pertama */
-document.addEventListener(
-    "touchstart",
-    startMusicOnce,
-    {
-        passive: true
-    }
-);
-
-document.addEventListener(
-    "pointerdown",
-    startMusicOnce
-);
-
-document.addEventListener(
-    "click",
-    startMusicOnce
-);
-
-            document.removeEventListener(
-                "pointerdown",
-                startMusic
+        if (
+            !daysElement ||
+            !hoursElement ||
+            !minutesElement ||
+            !secondsElement
+        ) {
+            console.error(
+                "Elemen hitung mundur tidak ditemukan."
             );
 
-            document.removeEventListener(
-                "scroll",
-                startMusic
-            );
+            return;
         }
 
-        /*
-        Mencoba memainkan musik saat halaman dibuka.
-        */
+        if (distance <= 0) {
+            daysElement.textContent = "00";
+            hoursElement.textContent = "00";
+            minutesElement.textContent = "00";
+            secondsElement.textContent = "00";
 
-        window.addEventListener(
-            "load",
-            function () {
-                backgroundMusic.load();
-                startMusic();
-            }
-        );
-
-        /*
-        Jika autoplay diblokir, musik mulai ketika
-        pengguna pertama kali menyentuh atau menggulir.
-        Tidak ada tombol musik yang ditampilkan.
-        */
-
-        document.addEventListener(
-            "click",
-            startMusic
-        );
-
-        document.addEventListener(
-            "touchstart",
-            startMusic,
-            {
-                passive: true
-            }
-        );
-
-        document.addEventListener(
-            "pointerdown",
-            startMusic
-        );
-
-        document.addEventListener(
-            "scroll",
-            startMusic,
-            {
-                passive: true
-            }
-        );
-
-        /*
-        ===============================================
-        BAGIKAN UNDANGAN
-        ===============================================
-        */
-
-        async function shareInvitation() {
-            const shareData = {
-                title:
-                    "PA Naposo Bulung HKBP Dame",
-
-                text:
-                    "Undangan PA Naposo Bulung " +
-                    "HKBP Dame. Sabtu, 08 Agustus " +
-                    "2026 pukul 20.00 WIB. " +
-                    "Tuan rumah Selvi Olivia " +
-                    "Br. Hutapea.",
-
-                url:
-                    window.location.href
-            };
-
-            try {
-                if (navigator.share) {
-                    await navigator.share(
-                        shareData
-                    );
-
-                    return;
-                }
-
-                if (navigator.clipboard) {
-                    await navigator
-                        .clipboard
-                        .writeText(
-                            window.location.href
-                        );
-
-                    alert(
-                        "Link undangan berhasil disalin."
-                    );
-
-                    return;
-                }
-
-                prompt(
-                    "Salin link undangan berikut:",
-                    window.location.href
-                );
-            } catch (error) {
-                console.log(
-                    "Pembagian undangan dibatalkan.",
-                    error
-                );
-            }
+            return;
         }
 
-        updateCountdown();
+        const days = Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
-        setInterval(
-            updateCountdown,
+        const hours = Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+        const seconds = Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            ) /
             1000
         );
-    </script>
+
+        daysElement.textContent =
+            String(days).padStart(2, "0");
+
+        hoursElement.textContent =
+            String(hours).padStart(2, "0");
+
+        minutesElement.textContent =
+            String(minutes).padStart(2, "0");
+
+        secondsElement.textContent =
+            String(seconds).padStart(2, "0");
+    }
+
+    /*
+    =================================================
+    MUSIK
+    =================================================
+    */
+
+    const backgroundMusic =
+        document.getElementById(
+            "backgroundMusic"
+        );
+
+    let musicStarted = false;
+
+    async function startMusic() {
+        if (
+            musicStarted ||
+            !backgroundMusic
+        ) {
+            return;
+        }
+
+        try {
+            backgroundMusic.volume = 1;
+            backgroundMusic.muted = false;
+
+            await backgroundMusic.play();
+
+            musicStarted = true;
+
+            removeMusicListeners();
+        } catch (error) {
+            console.log(
+                "Musik menunggu sentuhan pengguna.",
+                error
+            );
+        }
+    }
+
+    function removeMusicListeners() {
+        document.removeEventListener(
+            "click",
+            startMusic
+        );
+
+        document.removeEventListener(
+            "touchstart",
+            startMusic
+        );
+
+        document.removeEventListener(
+            "pointerdown",
+            startMusic
+        );
+    }
+
+    window.addEventListener(
+        "load",
+        startMusic
+    );
+
+    document.addEventListener(
+        "click",
+        startMusic
+    );
+
+    document.addEventListener(
+        "touchstart",
+        startMusic,
+        {
+            passive: true
+        }
+    );
+
+    document.addEventListener(
+        "pointerdown",
+        startMusic
+    );
+
+    /*
+    =================================================
+    BAGIKAN UNDANGAN
+    =================================================
+    */
+
+    async function shareInvitation() {
+        const shareData = {
+            title:
+                "PA Naposo Bulung HKBP Dame",
+
+            text:
+                "Undangan PA Naposo Bulung " +
+                "HKBP Dame. Sabtu, 08 Agustus " +
+                "2026 pukul 20.00 WIB. " +
+                "Tuan rumah Selvi Olivia " +
+                "Br. Hutapea.",
+
+            url:
+                window.location.href
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(
+                    shareData
+                );
+
+                return;
+            }
+
+            if (navigator.clipboard) {
+                await navigator.clipboard
+                    .writeText(
+                        window.location.href
+                    );
+
+                alert(
+                    "Link undangan berhasil disalin."
+                );
+
+                return;
+            }
+
+            prompt(
+                "Salin link undangan berikut:",
+                window.location.href
+            );
+        } catch (error) {
+            console.log(
+                "Pembagian undangan dibatalkan.",
+                error
+            );
+        }
+    }
+
+    /*
+    =================================================
+    JALANKAN COUNTDOWN
+    =================================================
+    */
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+</script>
 
 </body>
 </html>
