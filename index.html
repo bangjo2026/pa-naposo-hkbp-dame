@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Undangan PA Naposo Bulung HKBP Dame"
+    >
+
+    <title>PA Naposo Bulung HKBP Dame</title>
+
+    <style>
+        :root {
+            --navy-dark: #020914;
+            --navy: #071a32;
+            --navy-light: #123c6a;
+            --blue: #3182ce;
+            --sky: #b8dfff;
+            --gold: #e7c36b;
+            --cream: #fff6dc;
+            --white: #ffffff;
+            --line: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            color: var(--white);
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 12%,
+                    rgba(47, 128, 210, 0.42),
+                    transparent 31%
+                ),
+                radial-gradient(
+                    circle at 50% 60%,
+                    rgba(24, 94, 165, 0.22),
+                    transparent 48%
+                ),
+                linear-gradient(
+                    160deg,
+                    var(--navy-dark) 0%,
+                    var(--navy) 48%,
+                    var(--navy-light) 100%
+                );
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+
+            opacity: 0.30;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.8) 0 1px,
+                    transparent 1.7px
+                ),
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.55) 0 1px,
+                    transparent 1.6px
+                ),
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.4) 0 1px,
+                    transparent 1.5px
+                );
+
+            background-size:
+                125px 125px,
+                180px 180px,
+                230px 230px;
+
+            background-position:
+                10px 20px,
+                60px 80px,
+                100px 140px;
+
+            animation: starsMove 18s linear infinite;
+        }
+
+        .page {
+            width: min(100%, 900px);
+            margin: auto;
+            padding: 20px 16px 40px;
+        }
+
+        /*
+        ==========================================
+        COVER
+        ==========================================
+        */
+
+        .hero {
+            min-height: 96vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            animation: reveal 1.1s ease both;
+        }
+
+        /*
+        ==========================================
+        LOGO KIRI, JUDUL TENGAH, LOGO KANAN
+        ==========================================
+        */
+
+        .hero-heading {
+            display: grid;
+
+            grid-template-columns:
+                clamp(100px, 16vw, 145px)
+                minmax(0, 1fr)
+                clamp(100px, 16vw, 145px);
+
+            align-items: center;
+
+            gap: clamp(15px, 3vw, 32px);
+
+            width: 100%;
+            margin: auto;
+        }
+
+        .heading-content {
+            min-width: 0;
+            text-align: center;
+        }
+
+        .side-logo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            padding: 7px;
+
+            overflow: hidden;
+
+            border:
+                2px solid
+                rgba(231, 195, 107, 0.82);
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 5px rgba(255, 255, 255, 0.05),
+                0 14px 36px rgba(0, 0, 0, 0.35),
+                0 0 30px rgba(66, 148, 240, 0.28);
+
+            animation:
+                logoFloat
+                3s
+                ease-in-out
+                infinite;
+        }
+
+        .side-logo:last-child {
+            animation-delay: 0.4s;
+        }
+
+        .side-logo img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+            background: #ffffff;
+        }
+
+        .church-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            max-width: 100%;
+
+            padding: 9px 16px;
+            margin-bottom: 18px;
+
+            border:
+                1px solid
+                rgba(231, 195, 107, 0.48);
+
+            border-radius: 999px;
+
+            color: var(--gold);
+
+            background:
+                rgba(231, 195, 107, 0.08);
+
+            font-size: clamp(8px, 1.3vw, 11px);
+            font-weight: 700;
+
+            letter-spacing: clamp(1px, 0.25vw, 2.3px);
+            text-transform: uppercase;
+
+            white-space: nowrap;
+        }
+
+        .eyebrow {
+            margin-bottom: 8px;
+
+            color: var(--sky);
+
+            font-size: clamp(11px, 2vw, 15px);
+            font-weight: 700;
+
+            letter-spacing: clamp(2px, 0.5vw, 4px);
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 560px;
+            margin: auto;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(32px, 6vw, 65px);
+            line-height: 1.02;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #fff3ca 47%,
+                    var(--gold) 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            filter:
+                drop-shadow(
+                    0 5px 20px
+                    rgba(0, 0, 0, 0.35)
+                );
+        }
+
+        .subtitle-title {
+            margin-top: 10px;
+
+            color:
+                rgba(255, 255, 255, 0.82);
+
+            font-size: clamp(13px, 2vw, 18px);
+            font-weight: 700;
+
+            letter-spacing: clamp(2px, 0.4vw, 4px);
+            text-transform: uppercase;
+        }
+
+        .date-badge {
+            width: fit-content;
+
+            margin: 30px auto 0;
+            padding: 13px 22px;
+
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.2);
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.2);
+
+            color: var(--cream);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(18px, 3vw, 25px);
+        }
+
+        .scroll-text {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            color:
+                rgba(255, 255, 255, 0.52);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            animation:
+                float
+                2s
+                ease-in-out
+                infinite;
+        }
+
+        /*
+        ==========================================
+        SECTION
+        ==========================================
+        */
+
+        .section {
+            margin-top: 25px;
+            padding: 28px 22px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.11),
+                    rgba(255, 255, 255, 0.045)
+                );
+
+            box-shadow:
+                0 22px 55px
+                rgba(0, 0, 0, 0.22);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .section-heading {
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .section-heading small {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(25px, 5vw, 36px);
+            font-weight: 600;
+        }
+
+        /*
+        ==========================================
+        DETAIL ACARA
+        ==========================================
+        */
+
+        .detail-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 13px;
+        }
+
+        .detail-card {
+            min-height: 130px;
+            padding: 19px 16px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.11);
+
+            border-radius: 18px;
+
+            background:
+                rgba(255, 255, 255, 0.055);
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            margin-bottom: 13px;
+
+            border-radius: 12px;
+
+            color: var(--gold);
+
+            background:
+                rgba(231, 195, 107, 0.12);
+
+            font-size: 19px;
+        }
+
+        .detail-card h3 {
+            margin-bottom: 7px;
+
+            color: var(--sky);
+
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .detail-card p {
+            color:
+                rgba(255, 255, 255, 0.93);
+
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        /*
+        ==========================================
+        TEMA
+        ==========================================
+        */
+
+        .theme-card {
+            position: relative;
+            overflow: hidden;
+
+            padding: 36px 24px;
+
+            text-align: center;
+        }
+
+        .theme-card::before {
+            content: "“";
+
+            position: absolute;
+            top: -28px;
+            left: 14px;
+
+            color:
+                rgba(231, 195, 107, 0.12);
+
+            font-family: Georgia, serif;
+            font-size: 155px;
+        }
+
+        .theme-label {
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .theme-text {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 14px;
+
+            color: var(--cream);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(27px, 6vw, 44px);
+            font-weight: 600;
+            line-height: 1.18;
+        }
+
+        .sub-theme {
+            max-width: 550px;
+
+            margin: 16px auto 0;
+
+            color:
+                rgba(255, 255, 255, 0.75);
+
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /*
+        ==========================================
+        AYAT
+        ==========================================
+        */
+
+        .verse-card {
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(142, 202, 230, 0.15),
+                    transparent 46%
+                ),
+                rgba(255, 255, 255, 0.055);
+        }
+
+        .verse-reference {
+            display: inline-block;
+
+            margin-bottom: 16px;
+            padding: 8px 16px;
+
+            border-radius: 999px;
+
+            color: var(--gold);
+
+            background:
+                rgba(231, 195, 107, 0.1);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .verse-text {
+            max-width: 620px;
+            margin: auto;
+
+            color:
+                rgba(255, 255, 255, 0.93);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(19px, 4vw, 27px);
+            line-height: 1.55;
+        }
+
+        /*
+        ==========================================
+        COUNTDOWN
+        ==========================================
+        */
+
+        .countdown {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .count-item {
+            padding: 17px 7px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.11);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255, 255, 255, 0.045);
+
+            text-align: center;
+        }
+
+        .count-number {
+            display: block;
+
+            color: var(--cream);
+
+            font-family: Georgia, serif;
+
+            font-size: clamp(23px, 5vw, 35px);
+            font-weight: 700;
+        }
+
+        .count-label {
+            display: block;
+
+            margin-top: 4px;
+
+            color:
+                rgba(255, 255, 255, 0.5);
+
+            font-size: 8px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /*
+        ==========================================
+        TOMBOL
+        ==========================================
+        */
+
+        .button-group {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 11px;
+            margin-top: 21px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            min-height: 53px;
+            padding: 13px 15px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.14);
+
+            border-radius: 15px;
+
+            color: var(--white);
+
+            background:
+                rgba(255, 255, 255, 0.07);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-decoration: none;
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+
+            background:
+                rgba(255, 255, 255, 0.13);
+        }
+
+        .button.primary {
+            color: #091522;
+
+            border-color: transparent;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1bd,
+                    var(--gold)
+                );
+        }
+
+        /*
+        ==========================================
+        FOOTER
+        ==========================================
+        */
+
+        footer {
+            padding: 40px 10px 6px;
+            text-align: center;
+        }
+
+        .footer-cross {
+            color: var(--gold);
+            font-size: 25px;
+        }
+
+        footer p {
+            margin-top: 9px;
+
+            color:
+                rgba(255, 255, 255, 0.52);
+
+            font-family: Georgia, serif;
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .closing {
+            margin-top: 9px;
+
+            color:
+                rgba(255, 255, 255, 0.32);
+
+            font-size: 9px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /*
+        ==========================================
+        ANIMASI
+        ==========================================
+        */
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        @keyframes logoFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        @keyframes starsMove {
+            from {
+                background-position:
+                    10px 20px,
+                    60px 80px,
+                    100px 140px;
+            }
+
+            to {
+                background-position:
+                    40px 110px,
+                    25px 190px,
+                    150px 280px;
+            }
+        }
+
+        /*
+        ==========================================
+        RESPONSIVE TABLET
+        ==========================================
+        */
+
+        @media (max-width: 750px) {
+            .hero-heading {
+                grid-template-columns:
+                    85px
+                    minmax(0, 1fr)
+                    85px;
+
+                gap: 11px;
+            }
+
+            .side-logo {
+                padding: 5px;
+            }
+
+            .church-label {
+                padding: 7px 11px;
+                margin-bottom: 14px;
+
+                font-size: 8px;
+                letter-spacing: 1.3px;
+            }
+
+            h1 {
+                font-size: clamp(28px, 7vw, 46px);
+            }
+        }
+
+        /*
+        ==========================================
+        RESPONSIVE HP
+        ==========================================
+        */
+
+        @media (max-width: 520px) {
+            .page {
+                padding: 14px 12px 28px;
+            }
+
+            .hero {
+                min-height: 94vh;
+            }
+
+            .hero-heading {
+                grid-template-columns:
+                    65px
+                    minmax(0, 1fr)
+                    65px;
+
+                gap: 7px;
+            }
+
+            .side-logo {
+                padding: 3px;
+
+                border-width: 1.5px;
+
+                box-shadow:
+                    0 0 0 3px rgba(255, 255, 255, 0.05),
+                    0 8px 22px rgba(0, 0, 0, 0.3),
+                    0 0 18px rgba(66, 148, 240, 0.24);
+            }
+
+            .church-label {
+                max-width: 100%;
+
+                padding: 6px 7px;
+                margin-bottom: 13px;
+
+                font-size: 6.5px;
+                letter-spacing: 0.7px;
+            }
+
+            .eyebrow {
+                margin-bottom: 6px;
+
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                font-size: clamp(24px, 7.2vw, 36px);
+                line-height: 1.05;
+            }
+
+            .subtitle-title {
+                margin-top: 7px;
+
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .date-badge {
+                margin-top: 27px;
+
+                font-size: 18px;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 23px 16px;
+                border-radius: 21px;
+            }
+        }
+
+        /*
+        ==========================================
+        HP SANGAT KECIL
+        ==========================================
+        */
+
+        @media (max-width: 370px) {
+            .hero-heading {
+                grid-template-columns:
+                    55px
+                    minmax(0, 1fr)
+                    55px;
+
+                gap: 5px;
+            }
+
+            .church-label {
+                font-size: 5.8px;
+                letter-spacing: 0.4px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- COVER -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-heading">
+
+                    <!-- LOGO HKBP KIRI -->
+                    <div class="side-logo">
+                        <img
+                            src="logo-hkbp.jpg"
+                            alt="Logo HKBP"
+                        >
+                    </div>
+
+                    <!-- JUDUL TENGAH -->
+                    <div class="heading-content">
+
+                        <div class="church-label">
+                            ✦ Persekutuan Naposo Bulung ✦
+                        </div>
+
+                        <p class="eyebrow">
+                            Undangan
+                        </p>
+
+                        <h1>
+                            PA Naposo Bulung
+                        </h1>
+
+                        <p class="subtitle-title">
+                            HKBP Dame
+                        </p>
+
+                    </div>
+
+                    <!-- LOGO NAPOSO KANAN -->
+                    <div class="side-logo">
+                        <img
+                            src="logo-naposo.jpg"
+                            alt="Logo Naposo Bulung HKBP Dame"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="date-badge">
+                    Sabtu, 08 Agustus 2026
+                </div>
+
+                <div>
+                    <span class="scroll-text">
+                        Gulir untuk melihat undangan ↓
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DETAIL ACARA -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <small>
+                    Informasi Acara
+                </small>
+
+                <h2>
+                    Detail Persekutuan
+                </h2>
+
+            </div>
+
+            <div class="detail-grid">
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Hari dan Tanggal
+                    </h3>
+
+                    <p>
+                        Sabtu, 08 Agustus 2026
+                    </p>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        🕗
+                    </div>
+
+                    <h3>
+                        Waktu
+                    </h3>
+
+                    <p>
+                        Pukul 20.00 WIB
+                    </p>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Tuan Rumah
+                    </h3>
+
+                    <p>
+                        Selvi Olivia Br. Hutapea
+                    </p>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Alamat
+                    </h3>
+
+                    <p>
+                        Jalan Sejahtera Gg. Amal
+                    </p>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        ✝
+                    </div>
+
+                    <h3>
+                        Pengkhotbah
+                    </h3>
+
+                    <p>
+                        Inang St. S. Br. Hutauruk
+                    </p>
+
+                </article>
+
+                <article class="detail-card">
+
+                    <div class="icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Nats
+                    </h3>
+
+                    <p>
+                        Kolose 3:23
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- TEMA -->
+        <section class="section theme-card">
+
+            <div class="theme-label">
+                Tema PA
+            </div>
+
+            <div class="theme-text">
+                Menjadi Garam di Tengah Persekutuan
+            </div>
+
+            <p class="sub-theme">
+                “Bersinar melalui keaktifan dan kasih”
+            </p>
+
+        </section>
+
+        <!-- AYAT -->
+        <section class="section verse-card">
+
+            <div class="verse-reference">
+                Kolose 3:23
+            </div>
+
+            <p class="verse-text">
+                “Apa pun juga yang kamu perbuat,
+                perbuatlah dengan segenap hatimu
+                seperti untuk Tuhan dan bukan
+                untuk manusia.”
+            </p>
+
+        </section>
+
+        <!-- HITUNG MUNDUR -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <small>
+                    Menuju Hari Pelaksanaan
+                </small>
+
+                <h2>
+                    Hitung Mundur
+                </h2>
+
+            </div>
+
+            <div class="countdown">
+
+                <div class="count-item">
+
+                    <span
+                        class="count-number"
+                        id="days"
+                    >
+                        00
+                    </span>
+
+                    <span class="count-label">
+                        Hari
+                    </span>
+
+                </div>
+
+                <div class="count-item">
+
+                    <span
+                        class="count-number"
+                        id="hours"
+                    >
+                        00
+                    </span>
+
+                    <span class="count-label">
+                        Jam
+                    </span>
+
+                </div>
+
+                <div class="count-item">
+
+                    <span
+                        class="count-number"
+                        id="minutes"
+                    >
+                        00
+                    </span>
+
+                    <span class="count-label">
+                        Menit
+                    </span>
+
+                </div>
+
+                <div class="count-item">
+
+                    <span
+                        class="count-number"
+                        id="seconds"
+                    >
+                        00
+                    </span>
+
+                    <span class="count-label">
+                        Detik
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="button-group">
+
+                <a
+                    class="button primary"
+                    href="https://www.google.com/maps/search/?api=1&query=Jalan+Sejahtera+Gang+Amal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📍 Buka Lokasi
+                </a>
+
+                <button
+                    class="button"
+                    type="button"
+                    onclick="shareInvitation()"
+                >
+                    ↗ Bagikan Undangan
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-cross">
+                ✝
+            </div>
+
+            <p>
+                Kehadiran dan kebersamaan kita
+                menjadi sukacita dalam persekutuan.
+            </p>
+
+            <div class="closing">
+                PA Naposo Bulung HKBP Dame
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script>
+        /*
+        Waktu acara:
+        Sabtu, 08 Agustus 2026
+        Pukul 20.00 WIB
+        */
+
+        const eventDate =
+            new Date(
+                "2026-08-08T20:00:00+07:00"
+            ).getTime();
+
+        function updateCountdown() {
+            const distance =
+                eventDate - Date.now();
+
+            let days = 0;
+            let hours = 0;
+            let minutes = 0;
+            let seconds = 0;
+
+            if (distance > 0) {
+                days =
+                    Math.floor(
+                        distance /
+                        (
+                            1000 *
+                            60 *
+                            60 *
+                            24
+                        )
+                    );
+
+                hours =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        )
+                        /
+                        (
+                            1000 *
+                            60 *
+                            60
+                        )
+                    );
+
+                minutes =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60 *
+                                60
+                            )
+                        )
+                        /
+                        (
+                            1000 *
+                            60
+                        )
+                    );
+
+                seconds =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60
+                            )
+                        )
+                        /
+                        1000
+                    );
+            }
+
+            document
+                .getElementById("days")
+                .textContent =
+                    String(days)
+                    .padStart(2, "0");
+
+            document
+                .getElementById("hours")
+                .textContent =
+                    String(hours)
+                    .padStart(2, "0");
+
+            document
+                .getElementById("minutes")
+                .textContent =
+                    String(minutes)
+                    .padStart(2, "0");
+
+            document
+                .getElementById("seconds")
+                .textContent =
+                    String(seconds)
+                    .padStart(2, "0");
+        }
+
+        async function shareInvitation() {
+            const shareData = {
+                title:
+                    "PA Naposo Bulung HKBP Dame",
+
+                text:
+                    "Undangan PA Naposo Bulung " +
+                    "HKBP Dame. Sabtu, 08 Agustus " +
+                    "2026 pukul 20.00 WIB. " +
+                    "Tuan rumah Selvi Olivia " +
+                    "Br. Hutapea.",
+
+                url:
+                    window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(
+                        shareData
+                    );
+
+                    return;
+                }
+
+                if (navigator.clipboard) {
+                    await navigator.clipboard
+                        .writeText(
+                            window.location.href
+                        );
+
+                    alert(
+                        "Link undangan berhasil disalin."
+                    );
+
+                    return;
+                }
+
+                prompt(
+                    "Salin link undangan berikut:",
+                    window.location.href
+                );
+            } catch (error) {
+                console.log(
+                    "Pembagian undangan dibatalkan.",
+                    error
+                );
+            }
+        }
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+    </script>
+
+</body>
+</html>
