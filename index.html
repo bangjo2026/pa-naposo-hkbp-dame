@@ -831,9 +831,12 @@
 <body>
 
     <!-- MUSIK LATAR -->
-<audio id="backgroundMusic" loop preload="auto" playsinline>
-    <source src="musik.mp3" type="audio/mpeg">
-</audio>
+    <audio 
+    id="backgroundMusic" 
+    loop preload="auto" 
+    playsinline>
+    src="musik.mp3"
+    ></audio>
 
     <main class="page">
 
@@ -1211,76 +1214,84 @@
     */
 
     const backgroundMusic =
-        document.getElementById(
-            "backgroundMusic"
-        );
+    document.getElementById("backgroundMusic");
 
-    let musicStarted = false;
+let musicStarted = false;
 
-    async function startMusic() {
-        if (
-            musicStarted ||
-            !backgroundMusic
-        ) {
-            return;
-        }
+backgroundMusic.volume = 0.8;
 
-        try {
-            backgroundMusic.volume = 1;
-            backgroundMusic.muted = false;
+/*
+Meminta browser mulai mengunduh musik
+sejak halaman dibuka.
+*/
+backgroundMusic.load();
 
-            await backgroundMusic.play();
-
-            musicStarted = true;
-
-            removeMusicListeners();
-        } catch (error) {
-            console.log(
-                "Musik menunggu sentuhan pengguna.",
-                error
-            );
-        }
+async function startMusicImmediately() {
+    if (musicStarted) {
+        return;
     }
 
-    function removeMusicListeners() {
-        document.removeEventListener(
-            "click",
-            startMusic
-        );
+    try {
+        backgroundMusic.muted = false;
 
-        document.removeEventListener(
-            "touchstart",
-            startMusic
-        );
+        await backgroundMusic.play();
 
-        document.removeEventListener(
-            "pointerdown",
-            startMusic
+        musicStarted = true;
+
+        removeStartListeners();
+    } catch (error) {
+        console.log(
+            "Musik belum diizinkan browser:",
+            error
         );
     }
+}
 
-    window.addEventListener(
-        "load",
-        startMusic
-    );
-
-    document.addEventListener(
-        "click",
-        startMusic
-    );
-
-    document.addEventListener(
-        "touchstart",
-        startMusic,
-        {
-            passive: true
-        }
-    );
-
-    document.addEventListener(
+function removeStartListeners() {
+    window.removeEventListener(
         "pointerdown",
-        startMusic
+        startMusicImmediately
     );
+
+    window.removeEventListener(
+        "touchstart",
+        startMusicImmediately
+    );
+
+    window.removeEventListener(
+        "click",
+        startMusicImmediately
+    );
+}
+
+/*
+Pointerdown dijalankan lebih awal daripada click,
+sehingga musik terasa lebih cepat mulai.
+*/
+window.addEventListener(
+    "pointerdown",
+    startMusicImmediately,
+    {
+        once: true
+    }
+);
+
+window.addEventListener(
+    "touchstart",
+    startMusicImmediately,
+    {
+        once: true,
+        passive: true
+    }
+);
+
+window.addEventListener(
+    "click",
+    startMusicImmediately,
+    {
+        once: true
+    }
+);
 
     /*
     =================================================
