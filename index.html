@@ -112,13 +112,13 @@
         /* COVER */
 
         .hero {
-            min-height: 100vh;
+            min-height: auto;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            padding: 35px 0 50px;
+            padding: 45px 0 70px;
             text-align: center;
         }
 
@@ -831,18 +831,9 @@
 <body>
 
     <!-- MUSIK LATAR -->
-    <audio
-        id="backgroundMusic"
-        autoplay
-        loop
-        preload="auto"
-        playsinline
-    >
-        <source
-            src="./musik.mp3"
-            type="audio/mpeg"
-        >
-    </audio>
+<audio id="backgroundMusic" loop preload="auto" playsinline>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
 
     <main class="page">
 
@@ -855,15 +846,16 @@
 
                     <div class="top-logo">
                         <img
-                            src="logo-hkbp.jpg"
-                            alt="Logo HKBP"
+                            src="logo-naposo.jpg"
+                            alt="Logo Naposo Bulung HKBP Dame"
                         >
                     </div>
 
                     <div class="top-logo">
                         <img
-                            src="logo-naposo.jpg"
-                            alt="Logo Naposo Bulung HKBP Dame"
+                                                    src="logo-hkbp.jpg"
+                            alt="Logo HKBP"
+
                         >
                     </div>
 
@@ -1236,43 +1228,75 @@
         */
 
         const backgroundMusic =
-            document.getElementById(
-                "backgroundMusic"
-            );
+    document.getElementById("backgroundMusic");
 
-        let musicStarted = false;
+backgroundMusic.volume = 1;
 
-        backgroundMusic.volume = 0.75;
+let musicStarted = false;
 
-        async function startMusic() {
-            if (musicStarted) {
-                return;
-            }
+async function startMusicOnce() {
+    if (musicStarted) return;
 
-            try {
-                await backgroundMusic.play();
+    try {
+        backgroundMusic.muted = false;
+        backgroundMusic.currentTime = 0;
 
-                musicStarted = true;
+        await backgroundMusic.play();
 
-                removeMusicEvents();
-            } catch (error) {
-                console.log(
-                    "Autoplay diblokir browser.",
-                    error
-                );
-            }
-        }
+        musicStarted = true;
 
-        function removeMusicEvents() {
-            document.removeEventListener(
-                "click",
-                startMusic
-            );
+        document.removeEventListener(
+            "touchstart",
+            startMusicOnce
+        );
 
-            document.removeEventListener(
-                "touchstart",
-                startMusic
-            );
+        document.removeEventListener(
+            "pointerdown",
+            startMusicOnce
+        );
+
+        document.removeEventListener(
+            "click",
+            startMusicOnce
+        );
+    } catch (error) {
+        console.error(
+            "Musik gagal diputar:",
+            error
+        );
+    }
+}
+
+/* Coba saat halaman terbuka */
+window.addEventListener("load", async function () {
+    try {
+        await backgroundMusic.play();
+        musicStarted = true;
+    } catch (error) {
+        console.log(
+            "Autoplay diblokir. Menunggu sentuhan pengguna."
+        );
+    }
+});
+
+/* Musik mulai saat sentuhan pertama */
+document.addEventListener(
+    "touchstart",
+    startMusicOnce,
+    {
+        passive: true
+    }
+);
+
+document.addEventListener(
+    "pointerdown",
+    startMusicOnce
+);
+
+document.addEventListener(
+    "click",
+    startMusicOnce
+);
 
             document.removeEventListener(
                 "pointerdown",
