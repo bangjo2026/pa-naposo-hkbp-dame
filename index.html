@@ -106,7 +106,7 @@
         .page {
             width: min(100%, 900px);
             margin: auto;
-            padding: 20px 16px 40px;
+            padding: 20px 16px 45px;
         }
 
         /* COVER */
@@ -127,7 +127,7 @@
             animation: reveal 1.1s ease both;
         }
 
-        /* LOGO DI ATAS */
+        /* LOGO */
 
         .top-logos {
             display: flex;
@@ -135,7 +135,6 @@
             justify-content: center;
 
             gap: clamp(24px, 6vw, 48px);
-
             margin-bottom: 30px;
         }
 
@@ -174,6 +173,8 @@
             border-radius: 50%;
             background: #ffffff;
         }
+
+        /* JUDUL */
 
         .church-label {
             display: inline-flex;
@@ -347,7 +348,7 @@
             font-weight: 600;
         }
 
-        /* DETAIL ACARA */
+        /* DETAIL */
 
         .detail-grid {
             display: grid;
@@ -704,19 +705,11 @@
             }
         }
 
-        /* TABLET */
-
-        @media (max-width: 750px) {
-            h1 {
-                font-size: clamp(48px, 10vw, 70px);
-            }
-        }
-
         /* HP */
 
         @media (max-width: 520px) {
             .page {
-                padding: 12px 13px 28px;
+                padding: 12px 13px 35px;
             }
 
             .hero {
@@ -756,7 +749,6 @@
 
                 font-size: clamp(49px, 13vw, 64px);
                 line-height: 0.98;
-                letter-spacing: -1px;
             }
 
             .subtitle-title {
@@ -806,8 +798,6 @@
             }
         }
 
-        /* HP KECIL */
-
         @media (max-width: 380px) {
             .top-logos {
                 gap: 18px;
@@ -839,6 +829,20 @@
 </head>
 
 <body>
+
+    <!-- MUSIK LATAR -->
+    <audio
+        id="backgroundMusic"
+        autoplay
+        loop
+        preload="auto"
+        playsinline
+    >
+        <source
+            src="./musik.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
 
     <main class="page">
 
@@ -895,11 +899,10 @@
 
         </section>
 
-        <!-- DETAIL ACARA -->
+        <!-- DETAIL -->
         <section class="section">
 
             <div class="section-heading">
-
                 <small>
                     Informasi Acara
                 </small>
@@ -907,105 +910,68 @@
                 <h2>
                     Detail Persekutuan
                 </h2>
-
             </div>
 
             <div class="detail-grid">
 
                 <article class="detail-card">
+                    <div class="icon">📅</div>
 
-                    <div class="icon">
-                        📅
-                    </div>
-
-                    <h3>
-                        Hari dan Tanggal
-                    </h3>
+                    <h3>Hari dan Tanggal</h3>
 
                     <p>
                         Sabtu, 08 Agustus 2026
                     </p>
-
                 </article>
 
                 <article class="detail-card">
+                    <div class="icon">🕗</div>
 
-                    <div class="icon">
-                        🕗
-                    </div>
-
-                    <h3>
-                        Waktu
-                    </h3>
+                    <h3>Waktu</h3>
 
                     <p>
                         Pukul 20.00 WIB
                     </p>
-
                 </article>
 
                 <article class="detail-card">
+                    <div class="icon">🏠</div>
 
-                    <div class="icon">
-                        🏠
-                    </div>
-
-                    <h3>
-                        Tuan Rumah
-                    </h3>
+                    <h3>Tuan Rumah</h3>
 
                     <p>
                         Selvi Olivia Br. Hutapea
                     </p>
-
                 </article>
 
                 <article class="detail-card">
+                    <div class="icon">📍</div>
 
-                    <div class="icon">
-                        📍
-                    </div>
-
-                    <h3>
-                        Alamat
-                    </h3>
+                    <h3>Alamat</h3>
 
                     <p>
                         Jalan Sejahtera Gg. Amal
                     </p>
-
                 </article>
 
                 <article class="detail-card">
+                    <div class="icon">✝</div>
 
-                    <div class="icon">
-                        ✝
-                    </div>
-
-                    <h3>
-                        Pengkhotbah
-                    </h3>
+                    <h3>Pengkhotbah</h3>
 
                     <p>
                         Inang St. S. Br. Hutauruk
                     </p>
-
                 </article>
 
                 <article class="detail-card">
+                    <div class="icon">📖</div>
 
-                    <div class="icon">
-                        📖
-                    </div>
-
-                    <h3>
-                        Nats
-                    </h3>
+                    <h3>Nats</h3>
 
                     <p>
                         Kolose 3:23
                     </p>
-
                 </article>
 
             </div>
@@ -1048,7 +1014,6 @@
         <section class="section">
 
             <div class="section-heading">
-
                 <small>
                     Menuju Hari Pelaksanaan
                 </small>
@@ -1056,13 +1021,11 @@
                 <h2>
                     Hitung Mundur
                 </h2>
-
             </div>
 
             <div class="countdown">
 
                 <div class="count-item">
-
                     <span
                         class="count-number"
                         id="days"
@@ -1073,11 +1036,9 @@
                     <span class="count-label">
                         Hari
                     </span>
-
                 </div>
 
                 <div class="count-item">
-
                     <span
                         class="count-number"
                         id="hours"
@@ -1088,11 +1049,9 @@
                     <span class="count-label">
                         Jam
                     </span>
-
                 </div>
 
                 <div class="count-item">
-
                     <span
                         class="count-number"
                         id="minutes"
@@ -1103,11 +1062,9 @@
                     <span class="count-label">
                         Menit
                     </span>
-
                 </div>
 
                 <div class="count-item">
-
                     <span
                         class="count-number"
                         id="seconds"
@@ -1118,7 +1075,6 @@
                     <span class="count-label">
                         Detik
                     </span>
-
                 </div>
 
             </div>
@@ -1146,7 +1102,6 @@
 
         </section>
 
-        <!-- FOOTER -->
         <footer>
 
             <div class="footer-cross">
@@ -1167,6 +1122,12 @@
     </main>
 
     <script>
+        /*
+        ===============================================
+        HITUNG MUNDUR
+        ===============================================
+        */
+
         const eventDate =
             new Date(
                 "2026-08-08T20:00:00+07:00"
@@ -1268,6 +1229,112 @@
                     .padStart(2, "0");
         }
 
+        /*
+        ===============================================
+        MUSIK TANPA TOMBOL
+        ===============================================
+        */
+
+        const backgroundMusic =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+        let musicStarted = false;
+
+        backgroundMusic.volume = 0.75;
+
+        async function startMusic() {
+            if (musicStarted) {
+                return;
+            }
+
+            try {
+                await backgroundMusic.play();
+
+                musicStarted = true;
+
+                removeMusicEvents();
+            } catch (error) {
+                console.log(
+                    "Autoplay diblokir browser.",
+                    error
+                );
+            }
+        }
+
+        function removeMusicEvents() {
+            document.removeEventListener(
+                "click",
+                startMusic
+            );
+
+            document.removeEventListener(
+                "touchstart",
+                startMusic
+            );
+
+            document.removeEventListener(
+                "pointerdown",
+                startMusic
+            );
+
+            document.removeEventListener(
+                "scroll",
+                startMusic
+            );
+        }
+
+        /*
+        Mencoba memainkan musik saat halaman dibuka.
+        */
+
+        window.addEventListener(
+            "load",
+            function () {
+                backgroundMusic.load();
+                startMusic();
+            }
+        );
+
+        /*
+        Jika autoplay diblokir, musik mulai ketika
+        pengguna pertama kali menyentuh atau menggulir.
+        Tidak ada tombol musik yang ditampilkan.
+        */
+
+        document.addEventListener(
+            "click",
+            startMusic
+        );
+
+        document.addEventListener(
+            "touchstart",
+            startMusic,
+            {
+                passive: true
+            }
+        );
+
+        document.addEventListener(
+            "pointerdown",
+            startMusic
+        );
+
+        document.addEventListener(
+            "scroll",
+            startMusic,
+            {
+                passive: true
+            }
+        );
+
+        /*
+        ===============================================
+        BAGIKAN UNDANGAN
+        ===============================================
+        */
+
         async function shareInvitation() {
             const shareData = {
                 title:
@@ -1294,7 +1361,8 @@
                 }
 
                 if (navigator.clipboard) {
-                    await navigator.clipboard
+                    await navigator
+                        .clipboard
                         .writeText(
                             window.location.href
                         );
